@@ -1,6 +1,22 @@
+
+## Table of Contents
+- [Overview](#overview)
+- [Clean Architecture](#clean-architecture)
+- [Data Flow](#data-flow)
+- [Task Overview](#task-overview)
+- [Folder-Structure](#folder-structure)
+- [Installation](#installation)
+
+
+
+## Overview
+
+This Flutter eCommerce app is designed using Test-Driven Development (TDD) and Clean Architecture principles. The project emphasizes creating a maintainable, modular, and testable codebase, ensuring each feature is independently testable and adheres to SOLID principles. Through TDD, features are implemented by first writing tests, then developing the code to pass those tests, resulting in a reliable and bug-resistant application.
+
+
 ## Clean Architecture
 
-Clean Architecture is a design pattern that emphasizes separation of concerns and maintains a clear boundary between different parts of an application. For a detailed description of Clean Architecture and its principles, please refer to the [Clean Architecture Documentation](https://example.com/clean-architecture-details).
+Clean Architecture is a design pattern that emphasizes separation of concerns and maintains a clear boundary between different parts of an application.
 
 ### Clean Architecture Data Flow
 
@@ -30,6 +46,9 @@ In Clean Architecture, data flows between layers in a unidirectional manner, ens
    - The UI then displays the processed data to the user or responds to the user’s action accordingly.
 
 ### Clean Architecture Data Flow Diagram
+
+
+![Clean Architecture Data Flow](assets/images/clean_architecture.jpg)
 
 
 ## Tasks Overview
@@ -64,7 +83,7 @@ In Clean Architecture, data flows between layers in a unidirectional manner, ens
 
 ## Installation
 
-To install dependencies, add the following to your `pubspec.yaml` file:
+To install dependencies, add the following to your `pubspec.yaml` file and run `flutter pub get`:
 
 ```yaml
 dependencies:
