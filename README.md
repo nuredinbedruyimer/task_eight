@@ -8,6 +8,12 @@
 - [Installation](#installation)
 
 
+
+## Overview
+
+This Flutter eCommerce app is designed using Test-Driven Development (TDD) and Clean Architecture principles. The project emphasizes creating a maintainable, modular, and testable codebase, ensuring each feature is independently testable and adheres to SOLID principles. Through TDD, features are implemented by first writing tests, then developing the code to pass those tests, resulting in a reliable and bug-resistant application.
+
+
 ## Clean Architecture
 
 Clean Architecture is a design pattern that emphasizes separation of concerns and maintains a clear boundary between different parts of an application.
