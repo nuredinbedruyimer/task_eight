@@ -6,7 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 // ignore: depend_on_referenced_packages
 import 'package:mockito/mockito.dart';
 
-import '../../helpers/test.mocks.mocks.dart';
+import '../../../../helpers/test.mocks.mocks.dart';
 
 void main() {
   late InsertProduct insertProductUsecase;
