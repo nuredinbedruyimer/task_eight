@@ -1,6 +1,36 @@
-# eCommerce Mobile App
+## Clean Architecture
 
-This project is an eCommerce mobile application built using **Flutter**, following **Test-Driven Development (TDD)** and **Clean Architecture** principles.
+Clean Architecture is a design pattern that emphasizes separation of concerns and maintains a clear boundary between different parts of an application. For a detailed description of Clean Architecture and its principles, please refer to the [Clean Architecture Documentation](https://example.com/clean-architecture-details).
+
+### Clean Architecture Data Flow
+
+In Clean Architecture, data flows between layers in a unidirectional manner, ensuring a clear separation of concerns and maintaining the integrity of the application’s core business logic. The flow of data is orchestrated in the following sequence:
+
+1. **User Interface (UI)**: 
+   - The user interacts with the UI, triggering a request that typically initiates in a controller or a view model.
+
+2. **Use Cases (Application Layer)**: 
+   - The UI forwards the user’s request to a use case. The use case represents a specific application feature or action (e.g., creating, reading, updating, or deleting a product).
+   - The use case coordinates the execution of the business logic by interacting with the relevant entities and repositories.
+
+3. **Repositories (Interface Layer)**: 
+   - The use case communicates with the repository to retrieve or persist data.
+   - The repository abstracts the details of the data source (e.g., API, database) and provides data to the use case.
+
+4. **Entities (Domain Layer)**: 
+   - Entities represent the core business models of the application. They are used by the use cases to perform the business logic.
+   - The use case may modify these entities or create new ones based on the data it retrieves or processes.
+
+5. **Data Sources (External Systems)**: 
+   - Repositories fetch data from or save data to external systems like databases, APIs, or local storage.
+   - The data retrieved is often mapped into domain entities or models before being passed back up the layers.
+
+6. **Response Flow**:
+   - The data, once processed by the use case and possibly modified, is returned back up to the UI layer.
+   - The UI then displays the processed data to the user or responds to the user’s action accordingly.
+
+### Clean Architecture Data Flow Diagram
+
 
 ## Tasks Overview
 
