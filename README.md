@@ -1,17 +1,48 @@
-# ecommerce_app
+# eCommerce Mobile App
 
-A new Flutter project.
+This project is an eCommerce mobile application built using **Flutter**, following **Test-Driven Development (TDD)** and **Clean Architecture** principles.
 
-## Getting Started
+## Tasks Overview
 
-This project is a starting point for a Flutter application.
+| **Task**                             | **Description**                                                                                                         |
+|--------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| **Project Setup**                    | Initialized the Flutter project and set up TDD and Clean Architecture structure.                                         |
+| **Product Entities**                 | Defined the `Product` entity in the domain layer, which includes attributes like `id`, `name`, `category`, `description`, and `price`. |
+| **Use Cases**                        | Implemented use cases for inserting, updating, deleting, and getting products.                                           |
+| **Repositories**                     | Defined repository interfaces for managing product data. Implemented the repository using local data sources.            |
+| **Product Model**                    | Created the `ProductModel` class for JSON serialization, including `toJson` and `fromJson` methods.                      |
+| **Testing**                          | Wrote unit tests for product use cases and models using `mockito`.                                                       |
 
-A few resources to get you started if this is your first Flutter project:
+## Folder Structure
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+| **Path**                             | **Description**                                                                                                         |
+|--------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| `lib/core/`                          | Contains core utilities and error handling (e.g., `failure.dart`, `database_failure.dart`, `server_failure.dart`).       |
+| `lib/features/product/domain/`       | Holds the domain logic, including entities, use cases, and repository interfaces.                                        |
+| `lib/features/product/data/`         | Contains data models and repository implementations.                                                                    |
+| `test/features/product/domain/`      | Includes tests for domain layer use cases (`get_product_test.dart`, `delete_product_test.dart`).                         |
+| `test/features/product/data/`        | Contains tests for data models and repository implementations.                                                          |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# E-commerce_Mobile
+## Packages Used
+
+| **Package**                                | **Description**                                                                                                         |
+|--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| **[equatable](https://pub.dev/packages/equatable)** | Simplifies value equality comparisons in Dart.                                                            |
+| **[dartz](https://pub.dev/packages/dartz)**         | Provides functional programming constructs like `Either`.                                                    |
+| **[mockito](https://pub.dev/packages/mockito)**     | A Dart package for creating mocks in unit tests.                                                            |
+| **[build_runner](https://pub.dev/packages/build_runner)** | A build system for Dart code generation.                                                            |
+
+## Installation
+
+To install dependencies, add the following to your `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  equatable: ^2.0.0
+  dartz: ^0.10.1
+
+dev_dependencies:
+  mockito: ^5.1.0
+  build_runner: ^2.1.7
