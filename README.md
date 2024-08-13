@@ -3,6 +3,9 @@
 - [Overview](#overview)
 - [Clean Architecture](#clean-architecture)
 - [Data Flow](#data-flow)
+- [Task Overview](#task-overview)
+- [Folder-Structure](#folder-structure)
+- [Installation](#installation)
 
 
 ## Clean Architecture
@@ -74,7 +77,7 @@ In Clean Architecture, data flows between layers in a unidirectional manner, ens
 
 ## Installation
 
-To install dependencies, add the following to your `pubspec.yaml` file:
+To install dependencies, add the following to your `pubspec.yaml` file and run `flutter pub get`:
 
 ```yaml
 dependencies:
