@@ -32,6 +32,9 @@ In Clean Architecture, data flows between layers in a unidirectional manner, ens
 ### Clean Architecture Data Flow Diagram
 
 
+![Clean Architecture Data Flow](assets/images/clean_architecture.jpg)
+
+
 ## Tasks Overview
 
 | **Task**                             | **Description**                                                                                                         |
