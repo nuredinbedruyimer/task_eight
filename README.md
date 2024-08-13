@@ -1,6 +1,13 @@
+
+## Table of Contents
+- [Overview](#overview)
+- [Clean Architecture](#clean-architecture)
+- [Data Flow](#data-flow)
+
+
 ## Clean Architecture
 
-Clean Architecture is a design pattern that emphasizes separation of concerns and maintains a clear boundary between different parts of an application. For a detailed description of Clean Architecture and its principles, please refer to the [Clean Architecture Documentation](https://example.com/clean-architecture-details).
+Clean Architecture is a design pattern that emphasizes separation of concerns and maintains a clear boundary between different parts of an application.
 
 ### Clean Architecture Data Flow
 
