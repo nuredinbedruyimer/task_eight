@@ -33,3 +33,12 @@ class CacheFailure extends Failure {
   @override
   List<Object> get props => [message];
 }
+
+class UnexpectedFailure extends Failure {
+  final String message;
+
+  const UnexpectedFailure({required this.message});
+
+  @override
+  List<Object> get props => [message];
+}

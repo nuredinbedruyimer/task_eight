@@ -40,4 +40,12 @@ class ProductModel extends Product {
       imageUrl: json['imageUrl'] as String,
     );
   }
+  Product toEntity() {
+    return Product(
+        id: id,
+        name: name,
+        description: description,
+        price: price,
+        imageUrl: imageUrl);
+  }
 }
