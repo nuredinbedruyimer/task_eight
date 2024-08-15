@@ -27,7 +27,7 @@ void main() {
     when(mockProductRepositories.insertProduct(testProductDetails))
         .thenAnswer((_) async => const Right(testProductDetails));
     //act
-    final result = await insertProductUsecase.call(testProductDetails);
+    final result = await insertProductUsecase(testProductDetails);
     //assert
     expect(result, const Right(testProductDetails));
   });

@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 
+import '../../../../core/constants/constants.dart';
 import '../../../../core/errors/exception.dart';
 import '../../../../core/errors/failure.dart';
 import '../../../../core/network/network_info.dart';
@@ -51,8 +52,7 @@ class ProductRepositoryImpl implements ProductRepository {
     } on ServerException {
       return const Left(ServerFailure(message: 'An error occurred'));
     } on SocketException {
-      return const Left(
-          ConnectionFailure(message: 'Failed to connect to the internet'));
+      return const Left(ConnectionFailure(message: Messages.noInternet));
     }
   }
 
@@ -78,8 +78,7 @@ class ProductRepositoryImpl implements ProductRepository {
     } on ServerException {
       return const Left(ServerFailure(message: 'An error occurred'));
     } on SocketException {
-      return const Left(
-          ConnectionFailure(message: 'Failed to connect to the internet'));
+      return const Left(ConnectionFailure(message: Messages.noInternet));
     }
   }
 
@@ -104,8 +103,7 @@ class ProductRepositoryImpl implements ProductRepository {
     } on ServerException {
       return const Left(ServerFailure(message: 'An error occurred'));
     } on SocketException {
-      return const Left(
-          ConnectionFailure(message: 'Failed to connect to the internet'));
+      return const Left(ConnectionFailure(message: Messages.noInternet));
     } on CacheException {
       return const Left(CacheFailure(message: 'An error occurred'));
     }
@@ -119,8 +117,7 @@ class ProductRepositoryImpl implements ProductRepository {
     } on ServerException {
       return const Left(ServerFailure(message: 'An error occurred'));
     } on SocketException {
-      return const Left(
-          ConnectionFailure(message: 'Failed to connect to the internet'));
+      return const Left(ConnectionFailure(message: Messages.noInternet));
     }
   }
 
@@ -142,8 +139,7 @@ class ProductRepositoryImpl implements ProductRepository {
     } on ServerException {
       return const Left(ServerFailure(message: 'An error occurred'));
     } on SocketException {
-      return const Left(
-          ConnectionFailure(message: 'Failed to connect to the internet'));
+      return const Left(ConnectionFailure(message: Messages.noInternet));
     }
   }
 }

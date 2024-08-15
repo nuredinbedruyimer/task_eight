@@ -14,6 +14,7 @@ void main() {
     mockProductRepositories = MockProductRepository();
     getProductTest = GetProduct(mockProductRepositories);
   });
+  //  this thing is what actually we Expect from the mocked repo result
   const testProductDetails = [
     Product(
         id: '1',
@@ -22,12 +23,12 @@ void main() {
         price: 344,
         imageUrl: 'imageUrl')
   ];
-  test('should get products from the repository', () async {
+  test('Should Get Product From The Repository', () async {
     //arrange
     when(mockProductRepositories.getProduct())
         .thenAnswer((_) async => const Right(testProductDetails));
     //act
-    final result = await getProductTest.call();
+    final result = await getProductTest();
     //assert
     expect(result, const Right(testProductDetails));
   });
