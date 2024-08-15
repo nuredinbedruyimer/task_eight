@@ -1,19 +1,44 @@
+import '../../../../core/errors/exception.dart';
 import '../../domain/entities/product.dart';
 
 class ProductModel extends Product {
-  // this part ensure the neeed of this 5 field to be model
-  // create instance(object Of product in this manner)
   const ProductModel({
-    required super.id,
-    required super.name,
-    required super.description,
-    required super.price,
-    required super.imageUrl,
-  });
+    required String id,
+    required String name,
+    required String description,
+    required String imageUrl,
+    required double price,
+  }) : super(
+          id: id,
+          name: name,
+          description: description,
+          price: price,
+          imageUrl: imageUrl,
+        );
 
-  // Convert a ProductModel into a Map (for JSON)
-  // it convert the given dart object(product Model) to its corresbondin json
-  //  and it return the returned map of key as string and value ans any value dynamic
+  factory ProductModel.fromJson(Map<String, dynamic> json) {
+    try {
+      return ProductModel(
+        id: json['id'],
+        name: json['name'],
+        description: json['description'],
+        price: (json['price'] as num).toDouble(),
+        imageUrl: json['imageUrl'],
+      );
+    } catch (e) {
+      throw JsonParsingException();
+    }
+  }
+  static List<ProductModel> fromJsonList(List<dynamic> jsonList) {
+    try {
+      return jsonList
+          .map((json) => ProductModel.fromJson(json as Map<String, dynamic>))
+          .toList();
+    } catch (e) {
+      throw JsonParsingException();
+    }
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'id': id,
@@ -24,28 +49,29 @@ class ProductModel extends Product {
     };
   }
 
-  // Create a ProductModel from a Map (from JSON)
-  //  it get product model from the given json(map<string, dynamic>) ans
-  //  return the converted product model
-  factory ProductModel.fromJson(Map<String, dynamic> json) {
-    return ProductModel(
-      // id is come from json with key as id and make it string
-      id: json['id'] as String,
-      // name come from json with key name and make it string
-      name: json['name'] as String,
-      // description come from json with key description  and make it string
-      description: json['description'] as String,
-      //  to make price double we have to use toDouble because it data type is Double in the model part
-      price: (json['price'] as num).toDouble(), // ensure price is a double
-      imageUrl: json['imageUrl'] as String,
-    );
+  static List<Map<String, dynamic>> toJsonList(List<ProductModel> products) {
+    return products.map((product) => product.toJson()).toList();
   }
-  Product toEntity() {
-    return Product(
+
+  Product toEntity() => Product(
         id: id,
         name: name,
         description: description,
         price: price,
-        imageUrl: imageUrl);
+        imageUrl: imageUrl,
+      );
+
+  static List<Product> toEntityList(List<ProductModel> models) {
+    return models.map((model) => model.toEntity()).toList();
+  }
+
+  static ProductModel toModel(Product product) {
+    return ProductModel(
+      id: product.id,
+      name: product.name,
+      description: product.description,
+      price: product.price,
+      imageUrl: product.imageUrl,
+    );
   }
 }
