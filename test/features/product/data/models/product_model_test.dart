@@ -43,7 +43,7 @@ void main() {
     'should return a json map containing proper data after converting the product model to json format',
     () async {
       // act
-      final result = testProductModel.toJson();
+      final result = jsonEncode(testProductModel.toJson());
       // assert
       final expectedJsonMap = {
         'id': '1',
@@ -53,7 +53,7 @@ void main() {
         'imageUrl': 'http://nuredin.com/image1',
       };
 
-      expect(result, expectedJsonMap);
+      expect(result, jsonEncode(expectedJsonMap));
     },
   );
 }

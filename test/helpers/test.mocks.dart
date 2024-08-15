@@ -4,6 +4,7 @@ import 'package:ecommerce_app/features/product/data/datasources/product_remote_d
 import 'package:ecommerce_app/features/product/domain/repositories/product_repository.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:mockito/annotations.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 @GenerateMocks([
   ProductRepository,
@@ -11,5 +12,6 @@ import 'package:mockito/annotations.dart';
   ProductLocalDataSource,
   NetworkInfo,
   InternetConnectionChecker,
+  SharedPreferences
 ])
 void main() {}
