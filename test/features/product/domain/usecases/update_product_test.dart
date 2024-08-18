@@ -31,7 +31,8 @@ void main() {
           .thenAnswer((_) async => const Right(testProduct));
 
       // act
-      final result = await updateProductTest(testProduct);
+      final result =
+          await updateProductTest(const UpdateParams(product: testProduct));
 
       // assert
       expect(result, const Right(testProduct));

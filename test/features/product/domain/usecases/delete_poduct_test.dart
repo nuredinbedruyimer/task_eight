@@ -30,7 +30,8 @@ void main() {
         .thenAnswer((_) async => const Right(null));
 
     // act
-    final result = await deleteProductTest(testProductId);
+    final result =
+        await deleteProductTest(const DeleteParams(productId: testProductId));
 
     //  Expected --> Returned by The mock
     //  Actual  --> Return by actual method

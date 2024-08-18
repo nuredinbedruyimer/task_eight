@@ -31,7 +31,8 @@ void main() {
         .thenAnswer((_) async => const Right(testProduct));
 
     // act
-    final result = await getSingleProduct(testProductId);
+    final result =
+        await getSingleProduct(const GetParams(productId: testProductId));
 
     // assert
     expect(result, const Right(testProduct));
