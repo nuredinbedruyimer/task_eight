@@ -17,6 +17,8 @@ void main() {
   late MockNetworkInfo mockNetworkInfo;
 
   late ProductRepositoryImpl productRepositoryImpl;
+
+  //  List Of Product Model
   const testProductModelList = [
     ProductModel(
         id: '1',
@@ -25,6 +27,7 @@ void main() {
         price: 345.0,
         imageUrl: 'imageUrl')
   ];
+  //  List Of Product Entities
   const testProductEntityList = [
     Product(
         id: '1',
@@ -33,12 +36,14 @@ void main() {
         price: 345.0,
         imageUrl: 'imageUrl')
   ];
+  //  Single Product Model
   const testProductModel = ProductModel(
       id: '1',
       name: 'Nike',
       description: 'Nike is the best',
       price: 345.0,
       imageUrl: 'imageUrl');
+  //  Single Product Entity
   const testProductEntity = Product(
       id: '1',
       name: 'Nike',

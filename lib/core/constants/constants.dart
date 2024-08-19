@@ -11,4 +11,5 @@ class Messages {
   static const String cacheError = 'Failed to load cache';
   static const String socketError =
       'No Internet connection or server unreachable';
+  static const String productStatetErrorMessage = 'Error In Product State';
 }

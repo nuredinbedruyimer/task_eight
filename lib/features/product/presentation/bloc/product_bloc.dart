@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import '../../../../core/constants/constants.dart';
 import '../../../../core/usecases/usecase.dart';
 import '../../domain/entities/product.dart';
 import '../../domain/usecases/delete_product.dart';
@@ -21,8 +22,8 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
           await _getSingleProductEvent(GetParams(productId: event.productId));
 
       data.fold(
-          (failure) =>
-              emit(const ProductErrorState(message: 'Some Message Here ')),
+          (failure) => emit(const ProductErrorState(
+              message: Messages.productStatetErrorMessage)),
           (product) => emit(LoadSingleProductState(product: product)));
     });
 
@@ -32,8 +33,8 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
       emit(ProductLoading());
       final datas = await _getProduct(NoParams());
       datas.fold(
-          (failure) =>
-              emit(const ProductErrorState(message: 'Some Error Message')),
+          (failure) => emit(const ProductErrorState(
+              message: Messages.productStatetErrorMessage)),
           (products) => emit(LoadAllProductState(products: products)));
     });
     on<UpdateProductEvent>((event, emit) async {
@@ -41,8 +42,8 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
       final data = await _updateProduct(UpdateParams(product: event.product));
 
       data.fold(
-        (failure) =>
-            emit(const ProductErrorState(message: 'Some Error Message')),
+        (failure) => emit(const ProductUpdatedErrorState(
+            message: Messages.productStatetErrorMessage)),
         (product) => emit(ProductUpdatedState(product: product)),
       );
     });
@@ -51,17 +52,17 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
       final data =
           await _deleteProduct(DeleteParams(productId: event.productId));
       data.fold(
-          (failure) =>
-              emit(const ProductErrorState(message: 'Some Error Messafe')),
-          (product) => ProductDeletedState());
+          (failure) => emit(const ProductErrorState(
+              message: Messages.productStatetErrorMessage)),
+          (product) => emit(ProductDeletedState()));
     });
 
     on<CreateProductEvent>((event, emit) async {
       emit(ProductLoading());
       final data = await _insertProduct(InsertParams(product: event.product));
       data.fold(
-          (failure) => emit(
-              const ProductCreatedErrorState(message: 'Some Error Message')),
+          (failure) => emit(const ProductCreatedErrorState(
+              message: Messages.productStatetErrorMessage)),
           (product) => emit(ProductCreatedState(product: product)));
     });
   }
