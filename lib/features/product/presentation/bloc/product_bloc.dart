@@ -61,8 +61,7 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
       emit(ProductLoading());
       final data = await _insertProduct(InsertParams(product: event.product));
       data.fold(
-          (failure) => emit(const ProductCreatedErrorState(
-              message: Messages.productStatetErrorMessage)),
+          (failure) => emit(const ProductCreatedErrorState(message: 'Here')),
           (product) => emit(ProductCreatedState(product: product)));
     });
   }
